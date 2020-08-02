@@ -562,4 +562,12 @@ extern struct page *alloc_new_node_page(struct page *page, unsigned long node);
 ssize_t print_max_page_owner(void);
 #endif
 
+#ifdef CONFIG_ANDROID_LOW_MEMORY_KILLER
+extern bool lmk_kill_possible(void);
+#else
+static inline bool lmk_kill_possible(void)
+{
+	return false;
+}
+#endif
 #endif	/* __MM_INTERNAL_H */
