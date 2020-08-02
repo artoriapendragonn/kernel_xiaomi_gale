@@ -171,6 +171,16 @@ config ION_OF
 
 	  If using Ion and devicetree, you should say Y here
 
+config ANDROID_LOW_MEMORY_KILLER
+	bool "Android Low Memory Killer"
+	---help---
+	  Registers processes to be killed when low memory conditions, this is useful
+	  as there is no particular swap space on android.
+
+	  The registered process will kill according to the priorities in android init
+	  scripts (/init.rc), and it defines priority values with minimum free memory size
+	  for each priority.
+
 endif # if ANDROID
 
 endmenu

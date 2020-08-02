@@ -11,6 +11,7 @@ obj-$(CONFIG_ASHMEM)			+= ashmem.o
 obj-$(CONFIG_ANDROID_VSOC)		+= vsoc.o
 obj-$(CONFIG_ANDROID_INTF_ALARM_DEV)	+= alarm-dev.o
 obj-$(CONFIG_DEBUG_KINFO)		+= debug_kinfo.o
+obj-$(CONFIG_ANDROID_LOW_MEMORY_KILLER)	+= lowmemorykiller.o
 
 ## once CONFIG_MTK_ION is set as y, means this project
 ##     will use MTK_ION, NOT aosp ION.
