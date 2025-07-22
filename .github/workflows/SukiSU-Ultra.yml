@@ -46,9 +46,9 @@ jobs:
           # Integrate SukiSU-Ultra non‑GKI
           echo ">>> Fetching & applying SukiSU-Ultra (non-GKI) patches…"
 
-          # Enable Kernel-SU Next (fix it btw)
-          # echo 'source "drivers/kernel/Kconfig"' >> "(pwd)/drivers/Kconfig" 
-          # echo 'obj-$(CONFIG_KSU) += kernel/' >> "(pwd)/drivers/Makefile"
+          # Enable Kernel-SU Next
+          # sed -i $'232i source "drivers/kernel/Kconfig"\n' ./drivers/Kconfig
+          # echo 'obj-$(CONFIG_KSU) += kernel/' >> "./drivers/Makefile"
 
           curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
           
