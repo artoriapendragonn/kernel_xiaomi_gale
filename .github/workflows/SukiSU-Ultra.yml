@@ -1,4 +1,4 @@
-name: Build Kernel-SU Next
+name: Build SukiSU-Ultra
 on:
   workflow_dispatch:
 
@@ -43,12 +43,14 @@ jobs:
       
       - name: Setup KernelSU-Next
         run: |
-          # Integrate Kernel-SU Next
+          # Integrate SukiSU-Ultra non‑GKI
+          echo ">>> Fetching & applying SukiSU-Ultra (non-GKI) patches…"
 
-          sed -i $'232i source "drivers/kernel/Kconfig"\n' ./drivers/Kconfig
-          echo 'obj-$(CONFIG_KSU) += kernel/' >> "./drivers/Makefile"
+          # Enable Kernel-SU Next
+          # sed -i $'232i source "drivers/kernel/Kconfig"\n' ./drivers/Kconfig
+          # echo 'obj-$(CONFIG_KSU) += kernel/' >> "./drivers/Makefile"
 
-          echo "Never gonna give you up never gonna let you down."
+          curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
           
       - name: Build kernel
         run: |
