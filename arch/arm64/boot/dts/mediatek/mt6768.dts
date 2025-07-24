@@ -101,8 +101,16 @@ page_owner=on quiet loop.max_part=16";
 			opp-microvolt = <931250>;
 		};
 		opp15 {
-			opp-hz = /bits/ 64 <1900000000>;
+			opp-hz = /bits/ 64 <1700000000>;
 			opp-microvolt = <962500>;
+		};
+		opp16 {
+			pp-hz = /bits/ 64 <1750000000>;
+			opp-microvolt = <987500>;
+		};
+		opp17 {
+			opp-hz = /bits/ 64 <1800000000>;
+			opp-microvolt = <1012500>;
 		};
 	};
 
@@ -170,8 +178,16 @@ page_owner=on quiet loop.max_part=16";
 			opp-microvolt = <1075000>;
 		};
 		opp15 {
-			opp-hz = /bits/ 64 <2100000000>;
+			opp-hz = /bits/ 64 <2000000000>;
 			opp-microvolt = <1087500>;
+		};
+		opp16 {
+			opp-hz = /bits/ 64 <2100000000>;
+			opp-microvolt = <1125000>;
+		};
+		opp17 {
+			opp-hz = /bits/ 64 <2150000000>;
+			opp-microvolt = <1150000>;
 		};
 	};
 
@@ -1064,7 +1080,7 @@ page_owner=on quiet loop.max_part=16";
 		compatible = "mediatek,fingerprint","mediatek,goodix-fp";
 		fpc,enable-wakeup;
 	};
-        
+
 	silead_fp: silead_fp {
 		compatible = "sil,silead_fp";
 	};
@@ -1100,7 +1116,7 @@ page_owner=on quiet loop.max_part=16";
 		compatible = "mediatek,infracfg";
 		reg = <0 0x1020e000 0 0x1000>;
 	};
-	
+
 	efuse: efuse@11c10000 {
 		compatible = "mediatek,devinfo";
 		reg = <0 0x11c10000 0 0x10000>;
@@ -1697,7 +1713,7 @@ defined(CONFIG_MTK_CAM_SECURITY_SUPPORT)
 	swtp: swtp {
 		compatible = "mediatek, swtp-eint";
 	};
-	
+
 	accdet: accdet {
 		compatible = "mediatek,pmic-accdet";
 	};
