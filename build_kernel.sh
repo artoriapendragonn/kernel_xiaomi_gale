@@ -14,6 +14,11 @@ export CONFIG_DEBUG_SECTION_MISMATCH=y
 # Default defconfig (change if needed)
 DEFCONFIG="gale_defconfig"
 
+# Enabling llvm for thinlto
+export LLVM=1
+export HOSTCC=clang
+export CLANG_TRIPLE=aarch64-linux-gnu-
+
 # Create output directory and configure
 mkdir -p out
 make O=out ARCH=arm64 CC=clang $DEFCONFIG
